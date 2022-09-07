@@ -1,7 +1,20 @@
+#!/bin/bash
 DATE=$(date +%Y-%m-%d-%H-%M)
 BACKUPDIR=/root/backup/backup_${DATE}
 DATADIR=$HOME/.near/data/*
+NEW_BACKUP_FILE=$BACKUP_DATA.zip
+
 mkdir ${BACKUPDIR}
+
+# delete old backup
+OLD_BACKUPS=`ls $BACKUP_DIR/*.zip`
+for file in $OLD_BACKUPS
+  do
+     rm $file
+     if [ ! -d "$file" ]; then
+       echo "$file has been deleted" | ts
+     fi
+  done
 
 sudo systemctl stop $service
 wait
