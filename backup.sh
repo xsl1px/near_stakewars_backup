@@ -20,6 +20,6 @@ else
     echo $BACKUPDIR is not created. Check your permissions.
     exit 0
 fi
-
+cd
 sudo systemctl start neard.service
 echo "NEAR node was started" | ts
