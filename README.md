@@ -1,2 +1,2 @@
 # near_stakewars_backup
-Back script for Near node
+Backup script for Near node
